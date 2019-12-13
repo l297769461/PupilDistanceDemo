@@ -1,0 +1,26 @@
+﻿<Window x:Class="PupilDistanceDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PupilDistanceDemo"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="瞳距缩放" Height="450" Width="800">
+    <Grid>
+        <Canvas Background="#0D1728" x:Name="canvas">
+            <Image Source="2.jpg" x:Name="img1" Stretch="Fill" Width="300"  Canvas.Top="100" Canvas.Left="50" />
+            <Image Source="1.jpg" x:Name="img2" Stretch="Fill" Width="200" Canvas.Top="100" Canvas.Left="400" />
+        </Canvas>
+        <StackPanel Orientation="Horizontal">
+            <Button Margin="5" VerticalAlignment="Top" Click="Button_Click">启动瞳距</Button>
+            <Button Margin="5" VerticalAlignment="Top" Click="Button_Click_1">关闭瞳距</Button>
+            <Button Margin="5" VerticalAlignment="Top" Click="Button_Click_2">瞳距计算</Button>
+            <Button Margin="5" VerticalAlignment="Top" Click="Button_Click_3">重置</Button>
+            <StackPanel VerticalAlignment="Top">
+                <TextBlock Text="{Binding ElementName=img2,Path=ActualWidth}" Foreground="Red" />
+                <TextBlock Text="{Binding ElementName=img2,Path=ActualHeight}" Foreground="Red" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
